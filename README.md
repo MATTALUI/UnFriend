@@ -1,21 +1,21 @@
 # UnFriend
 Tired of having all of those pesky Facebook Friends? Well, now you can send them all a request inviting them to unfriend you.
 
-##Technologies
+## Technologies
 * JavaScript
 * HTML
 * CSS
 * Facebook API
 
-##Goals
-###MVP
+## Goals
+### MVP
 * as a user, be able to log into Facebook.
 * as  a user be able to view a list of friends.
 * as a user be able to send notifications to someone on a friend list inviting them to unfriend you.
 
-###Stretch
+### Stretch
 * receive notifications when friends **actually** unfriend you following a request.
 * send "warning shots"
 
-######LINKS:
+###### LINKS:
 *
