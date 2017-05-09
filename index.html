@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <meta charset="utf-8">
+  <title>UnFriend Invite</title>
+</head>
+
+<body>
+  <div id="fb-root"></div>
+  <!-- <script src="js/facebook.js"></script> -->
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: '294571097270190',
+        xfbml: true,
+        version: 'v2.9'
+      });
+      FB.AppEvents.logPageView();
+      FB.getLoginStatus(function(response) {
+        if (response.status == 'connected') {
+          window.location.pathname = "/selector.html"
+        }
+      });
+    };
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {
+        return;
+      }
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "http://connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+  <div id="loggedOut">
+    <div id="cats">
+      <h1><span>Un</span>Friend Request</h1>
+    </div>
+
+    <div class="container">
+      <p class="">We all know that </p>
+      <button id="altlogin" class="waves-effect waves-light btn-large">LOGIN WITH FACEBOOK TO START </button><br>
+
+    </div>
+  </div>
+  <div id="loggedIn">
+    <div id="bar">
+      <h2><span>Un</span>Friend</h2>
+      <button id="logOut" class="waves-effect waves-light btn-large">LOGOUT</button>
+    </div>
+    <div id="aPlaceForEnemies" class="row">
+    </div>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+
+  <script id="friendCard" type="text/x-handlebars-template">
+      <div id="{{id}}" class="col s12 m6 aFriendYouHate">
+          <div class="card white">
+            <div class="card-content">
+              <div class="imageBox">
+                <img id="pic{{id}}" class="friendPic" src="{{profPic}}">
+              </div>
+              <h3 class="card-title">{{name}}</h3>
+            </div>
+
+          </div>
+        </div>
+  </script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.8/handlebars.min.js" charset="utf-8"></script>
+  <script src="js/fixed1.js" charset="utf-8"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+
+h2{
+    color: #ffffff;
+}
+h1{
+  font-size: 7em;
+  margin-top: 35vh;
+  color: #ffffff;
+  text-align: center;
+}
+span{
+  color: #f76565;
+  background-color: #556a96;
+  border-radius: 30%;
+}
+p{
+  font-size: 1.5em;
+}
+#altlogin{
+  background-color: #3b5998;
+}
+#cats{
+  background-color: #3b5998;
+}
+#loggedOut{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin-bottom: 1.5em;
+  background-color: #e9ebee;
+  padding-left: 0;
+  width: 100%;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+#loggedIn{
+  display: none;
+  /*display: flex;*/
+  flex-direction: column;
+  background-color: #e9ebee;
+  min-height: 100vh;
+}
+#bar{
+  /*background-color: #3b5998;#425D96;*/
+  background: linear-gradient(#526A9C, #3b5998);
+  display: flex;
+  justify-content: space-between;
+}
+#logOut{
+  margin: auto 1em auto 0;
+  background-color: #3c5484;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  flex-flow: column;
+  /*justify-content: center;*/
+}
+button{
+  max-width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.aFriendYouHate:hover{
+  background-color: yellow;
+}
+.imageBox{
+
+}
+.friendPic{
+  max-width: 200px;
+  max-height: 200px;
+  overflow: hidden;
+
+}
