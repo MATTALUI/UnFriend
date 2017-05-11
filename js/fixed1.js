@@ -109,8 +109,8 @@ function sendAttack(){
     var message = makeMessage(selection);
     var name = $($('#enemyInfo').children()[0]).data().name;
     var id = $($('#enemyInfo').children()[0]).data().id;
-    Materialize.toast(message.replace(/---/g, name), 4000);
-    post('POSTING: '+message.replace(/---/g, name), id);
+    Materialize.toast('POSTING: '+message.replace(/---/g, name), 4000);
+    post(message.replace(/---/g, name), id);
     closeModal();
   }
   catch(err){
