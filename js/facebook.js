@@ -5,11 +5,11 @@ window.fbAsyncInit = function() {
     version: 'v2.9'
   });
   FB.AppEvents.logPageView();
-  FB.getLoginStatus(function(response) {
-    if (response.status == 'connected') {
-      window.location.pathname = "/selector.html"
-    }
-  });
+  // FB.getLoginStatus(function(response) {
+  //   if (response.status == 'connected') {
+  //     window.location.pathname = "/selector.html"
+  //   }
+  // });
 };
 (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
