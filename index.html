@@ -11,39 +11,15 @@
 
 <body>
   <div id="fb-root"></div>
-  <!-- <script src="js/facebook.js"></script> -->
-  <script>
-    window.fbAsyncInit = function() {
-      FB.init({
-        appId: '294571097270190',
-        xfbml: true,
-        version: 'v2.9'
-      });
-      FB.AppEvents.logPageView();
-      FB.getLoginStatus(function(response) {
-        if (response.status == 'connected') {
-          window.location.pathname = "/selector.html"
-        }
-      });
-    };
-    (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) {
-        return;
-      }
-      js = d.createElement(s);
-      js.id = id;
-      js.src = "http://connect.facebook.net/en_US/sdk.js";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-  </script>
+  <script src="js/facebook.js"></script>
   <div id="loggedOut">
     <div id="cats">
       <h1><span>Un</span>Friend Request</h1>
     </div>
 
     <div class="container">
-      <p class="">We all know that </p>
+      <p class="">We all know that the worst part of the Facebook experience is having all of those friends.</p>
+
       <button id="altlogin" class="waves-effect waves-light btn-large">LOGIN WITH FACEBOOK TO START </button><br>
 
     </div>
@@ -53,30 +29,94 @@
       <h2><span>Un</span>Friend</h2>
       <button id="logOut" class="waves-effect waves-light btn-large">LOGOUT</button>
     </div>
+    <div id="aPlaceForMe">
+    </div>
     <div id="aPlaceForEnemies" class="row">
     </div>
   </div>
 
 
+  <!-- modal -->
+  <div id="meow" class="modal">
+    <div class="modal-content">
+      <div id="enemyInfo">
+      </div>
+      <div>
+        <form>
+          <h4>Why?</h4>
+             <p>
+               <input id="1" name="group1" type="radio" value="stinky">
+               <label for="1">Doesn't smell very good.</label>
+             </p>
+             <p>
+               <input name="group1" type="radio" id="2" value="badPosts">
+               <label for="2">Annoying posts.</label>
+             </p>
+             <p>
+               <input name="group1" type="radio" id="3"  value="politics">
+               <label for="3">Bad politics.</label>
+             </p>
+             <p>
+               <input name="group1" type="radio" id="4"  value="offended">
+               <label for="4">Did something offensive.</label>
+             </p>
+          <button class="closeModal waves-effect waves-light btn-large red">close</button>
+          <button class="waves-effect waves-light btn-large green" id="doIt">do it</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- jquery -->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
 
-  <script id="friendCard" type="text/x-handlebars-template">
-      <div id="{{id}}" class="col s12 m6 aFriendYouHate">
-          <div class="card white">
-            <div class="card-content">
-              <div class="imageBox">
-                <img id="pic{{id}}" class="friendPic" src="{{profPic}}">
-              </div>
-              <h3 class="card-title">{{name}}</h3>
-            </div>
+  <!-- materialize.js  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
 
-          </div>
+
+  <!-- friendCard template -->
+  <script id="friendCard" type="text/x-handlebars-template">
+
+    <div id="{{id}}" class="col s12 m6 aFriendYouHate">
+      <div class="card white enemy">
+        <div class="card-content enemy">
+          <img id="pic{{id}}" class="friendPic" src="{{profPic}}">
+          <h4>{{name}}</h4>
         </div>
+      </div>
+    </div>
+
   </script>
 
 
+  <!-- meCard template -->
+  <script id="meCard" type="text/x-handlebars-template">
+    <div id="{{id}}" class="col m12">
+      <div class="card white">
+        <div class="card-content">
+          <img id="pic{{id}}" class="friendPic" src="{{profPic}}">
+          <p>{{name}}</p>
+        </div>
+      </div>
+    </div>
+  </script>
+
+
+  <!-- modal person template -->
+  <script id="simpleNameAndPic" type="text/x-handlebars-template">
+  <img src="{{profPic}}" id="mod{{id}}" data-id="{{id}}" data-name="{{name}}">
+  <h4>{{name}}</h4>
+  </script>
+
+
+  <!-- handlebars -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.8/handlebars.min.js" charset="utf-8"></script>
+
+
+  <!-- myscript -->
   <script src="js/fixed1.js" charset="utf-8"></script>
 
 </body>

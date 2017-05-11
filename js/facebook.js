@@ -5,11 +5,9 @@ window.fbAsyncInit = function() {
     version: 'v2.9'
   });
   FB.AppEvents.logPageView();
-  FB.getLoginStatus(function(response){
-    if (response.status == 'connected' && window.location.pathname != "/selector.html"){
-      FB.api('/me',function(response){
-        console.log(response);
-      })
+  FB.getLoginStatus(function(response) {
+    if (response.status == 'connected') {
+      window.location.pathname = "/selector.html"
     }
   });
 };
