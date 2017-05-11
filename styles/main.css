@@ -60,12 +60,22 @@ button{
 .aFriendYouHate:hover{
   background-color: yellow;
 }
+.enemy:hover{
+  background-color: yellow;
+
+}
 .friendPic{
   max-width: 200px;
   max-height: 200px;
   margin-left: auto;
+  margin-right: auto;
   /*overflow: hidden;*/
 
+}
+.enemyName{
+  text-align: center;
+  /*margin-left: auto;
+  margin-right: auto;*/
 }
 .modal-content{
   display: flex;
@@ -73,6 +83,7 @@ button{
 #enemyInfo{
   margin-right: 5em;
 }
-.card-content.enemy>img{
-  padding-left: 500;
+.card-content.enemy{
+  display: flex;
+  flex-direction: column;
 }

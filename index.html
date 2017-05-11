@@ -46,7 +46,7 @@
           <h4>Why?</h4>
              <p>
                <input id="1" name="group1" type="radio" value="stinky">
-               <label for="1">Doesn't smell very good.</label>
+               <label for="1">We just don't "vibe".</label>
              </p>
              <p>
                <input name="group1" type="radio" id="2" value="badPosts">
@@ -84,7 +84,7 @@
       <div class="card white enemy">
         <div class="card-content enemy">
           <img id="pic{{id}}" class="friendPic" src="{{profPic}}">
-          <h4>{{name}}</h4>
+          <h4 class="enemyName">{{name}}</h4>
         </div>
       </div>
     </div>
@@ -95,7 +95,7 @@
   <!-- meCard template -->
   <script id="meCard" type="text/x-handlebars-template">
     <div id="{{id}}" class="col m12">
-      <div class="card white">
+      <div class="card orange">
         <div class="card-content">
           <img id="pic{{id}}" class="friendPic" src="{{profPic}}">
           <p>{{name}}</p>

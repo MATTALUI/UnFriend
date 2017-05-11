@@ -1,6 +1,7 @@
 $(document).ready(start);
 
 function start(){
+
 $('#altlogin').click(function(){
   FB.login(function(inResponse){
     if (inResponse.status == 'connected'){
@@ -18,9 +19,9 @@ $('#logOut').click(function(){
     $('#aPlaceForEnemies').off('click');
   });
 });
-$('#meow').modal({dismissible:false})
+$('#meow').modal({dismissible:false});
 $('.closeModal').click(closeModal);
-$('#doIt').click(sendAttack)
+$('#doIt').click(sendAttack);
 }
 
 
@@ -108,8 +109,8 @@ function sendAttack(){
     var message = makeMessage(selection);
     var name = $($('#enemyInfo').children()[0]).data().name;
     var id = $($('#enemyInfo').children()[0]).data().id;
-    // Materialize.toast(message.replace(/---/g, name), 4000);
-    post(message, name, id);
+    Materialize.toast(message.replace(/---/g, name), 4000);
+    post('POSTING: '+message.replace(/---/g, name), id);
     closeModal();
   }
   catch(err){
@@ -125,23 +126,40 @@ function handleIt(templateid, canvasid, context){
 
 }
 function makeMessage(type){
-  var off = ['You\'re offensive, ---!', 'I can\'t believe that you said that, ---!'];
-  var pol = ['I can\'t believe that you support Trump!'];
-  var per =['Man, you smell bad!'];
-  var ann = ['I hate the way that you chomp on your gum.'];
-  // console.log(type);
-  // return type;
+  var off = ['You\'re offensive, ---!', 'No one is more offensive that ---. Why am I even friends with ---?', '--- has offended me. '];
+  var pol = ['Have you seen ---\'s political posts? ha ha!', 'Politics aren\'t ---\'s thing, apparently.'];
+  var per =['--- and I just don\'t vibe, man.', 'There\'s something about --- that I just don\'t like.', '--- needs to take a hike.', 'Hey, ---, go ahead and unfriend me.'];
+  var ann = ['Has --- ever even posted anything good? I wish I didn\'t have to hear from him...', 'Hrm. --- never seems to post anything cool.'];
 
   switch (type){
     case 'offended':
       var rand = Math.floor(Math.random()*off.length);
       return off[rand];
+    case 'politics':
+      var rand = Math.floor(Math.random()*pol.length);
+      return pol[rand];
+    case 'badPosts':
+      var rand = Math.floor(Math.random()*ann.length);
+      return ann[rand];
+    case 'stinky':
+      var rand = Math.floor(Math.random()*per.length);
+      return per[rand];
     default:
-      return 'I just don\'t like you...';
+      return 'I just don\'t like ---.';
   }
 }
-function post(message, name, id){
-  
+function post(message, friendsid){
+  FB.api(
+    '/'+$('#aPlaceForMe').children()[0].id+'/feed',
+    'POST',
+    {
+      "message" : message,
+      "tags" : friendsid
+    },
+    function(){
+      Materialize.toast('The deed has been done...', 5000);
+    }
+  );
 }
 
 // this will get you your own id
