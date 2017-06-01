@@ -1,11 +1,12 @@
 # UnFriend
-Tired of having all of those pesky Facebook Friends? Well, now you can send them all a request inviting them to unfriend you.
+Tired of having all of those pesky Facebook Friends? Well, with UnFriend you can make posts about people that are so offensive that they will unfriend you. Problem solved.
 
 ## Technologies
 * JavaScript
 * HTML
 * CSS
 * Facebook API
+* Handlebars
 
 ## Goals
 ### MVP
